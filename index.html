@@ -83,7 +83,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p id="total-price">$500</p>
+                        <p id="total-price">$00</p>
                     </div>
                 </div>
 
@@ -92,7 +92,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$50</p>
+                        <p id="vat-amount">$00</p>
                     </div>
                 </div>
                 <hr>
@@ -101,7 +101,7 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$550</p>
+                        <p id="total-amount">$00</p>
                     </div>
                 </div>
             </div>
@@ -157,8 +157,15 @@
               const economyClassTicketInput = document.getElementById("economy-class-ticket-count");
               const economyClassCount = parseInt(economyClassTicketInput.value);
 
-              const TotalPrice = firstClassTicketInput * 150 + economyClassCount * 100;
+              const TotalPrice = firstClassCount* 150 + economyClassCount* 100;
                document.getElementById("total-price").innerText = '$' + TotalPrice; 
+
+               const vat = TotalPrice*0.1;
+               document.getElementById("vat-amount").innerText = '$' + vat;
+
+               const grandTotal = TotalPrice + vat;
+               document.getElementById("total-amount").innerText = '$' + grandTotal;
+
          }  
     </script>
 </body>
